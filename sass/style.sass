@@ -5,36 +5,48 @@
 .main
     position: relative
     z-index: 1
-    padding: 62px 0
+    padding: 22px 0
+    margin-bottom: 80px
     overflow: hidden
     &::before
         content: ''
         display: block
         width: 100%
-        height: 100%
+        max-width: 1700px
+        height: 80%
         z-index: -1
         position: absolute
         top: 0
-        left: 0
+        left: 50%
+        transform: translateX(-50%)
         background-image: url('../img/JAC.svg')
         background-repeat: no-repeat
         background-position: center center
-        background-size: 90% auto
-        opacity: .5
+        background-size: 100% auto
+        opacity: .4
+
+    h1
+        font-weight: 500
+        // font-style: italic
+
+    &__text
+        font-size: 22px
+
     &-col
         max-width: 400px
-        padding: 25px 0 0 25px
+        padding: 35px 0 0 25px
         background: linear-gradient(94.2deg, #FFFFFF 16.79%, rgba(255, 255, 255, 0) 88.76%)
         box-shadow: -80px -10px 100px -80px rgba(0, 0, 0, 0.2)
         border-radius: 10px
         position: relative
+        left: -25px
         z-index: 1
 
     &__img
         position: absolute
-        right: -12%
-        bottom: 8%
-        width: 93%
+        right: -15%
+        bottom: 10%
+        width: 87%
         pointer-events: none
         z-index: 1
 
@@ -43,12 +55,12 @@
         align-items: center
         background-color: #E4E4E4
         border-radius: 12px
-        padding: 10px 35px 10px 12px
+        padding: 12px 35px 12px 14px
         margin: 0 0 10px
         p
             font-weight: 400
             font-size: 16px
-            line-height: 130%
+            line-height: 140%
             margin: 0 0 0 18px
             span
                 font-size: 14px
@@ -58,6 +70,72 @@
             color: #fff
             background-color: #313131
 
+.features
+    h2
+        margin-bottom: 60px
+    .wrap
+        position: relative
+        z-index: 1
+        max-width: 1700px
+        margin: 0 auto
+        padding: 60px 30px
+    img
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        z-index: -1
+        height: 100%
+        border-radius: 60px
+        width: 60%
+        object-fit: cover
+    li
+        list-style: none
+        border-radius: 100px
+        background-color: #313131
+        font-weight: 400
+        font-size: 20px
+        line-height: 130%
+        color: #fff
+        text-align: center
+        min-height: 70px
+        display: flex
+        align-items: center
+        position: relative
+        justify-content: center
+        padding: 15px 40px
+        margin-bottom: 10px
+        max-width: 400px
+        flex-wrap: wrap
+        i 
+            display: block
+            font-style: normal
+            width: 100%
+        &:last-of-type
+            margin-bottom: 0
+
+        &:nth-of-type(even)
+            background-color: $prime
+            color: $black
+        &:nth-of-type(2),
+        &:nth-of-type(5)
+            margin: 0 60px 10px auto
+        &:nth-of-type(3),
+        &:nth-of-type(4)
+            margin: 0 0 10px auto
+    ul
+        // background-color: red
+        width: 35%
+        &:nth-of-type(2)
+            li
+                margin: 0 0 0 auto
+                &:nth-of-type(2),
+                &:nth-of-type(5)
+                    margin: 0 auto 10px 60px
+                &:nth-of-type(3),
+                &:nth-of-type(4)
+                    margin: 0 auto 10px 0
+
 @import 'slick'
 
 .photoshoot
@@ -65,6 +143,7 @@
     h2
         text-align: center
         max-width: 520px
+        margin-bottom: 0px
 
     .slider
         overflow: hidden
@@ -88,8 +167,9 @@
             bottom: -120px
 
         &-item
-            min-width: 500px
-            width: 500px
+            width: 100%
+            // min-width: 500px
+            // width: 500px
             height: 900px
             max-height: 115vh
             margin: 0 7px

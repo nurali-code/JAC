@@ -6,17 +6,21 @@ header
     width: 100%
     z-index: 9999
     transition: background-color ease .3s
-    padding: 20px 0 0
+    padding: 20px 0 60px
+    // background-color: red
 
     .container
         z-index: unset
-        max-width: 1380px
+        max-width: 1980px
 
     .logo
         width: 150px
         display: inline-block
         align-self: end
         margin: 0
+        position: absolute
+        top: 0
+        left: 15px
 
     .phone
         color: $black
@@ -25,7 +29,7 @@ header
             color: $black
 
     .nav
-        margin: 0 auto 0 40px
+        margin: 0 auto 0 140px
         padding-right: 30px
         list-style: none
         a
@@ -34,6 +38,7 @@ header
             font-size: 16px
             color: $black
             line-height: 150%
+            border-radius: 20px
             padding: 12px 14px 8px
             text-transform: uppercase
             &:hover
