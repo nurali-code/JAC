@@ -1,0 +1,158 @@
+header
+    padding: 13px 0 16px
+    // position: absolute
+    // top: 0
+    // left: 0
+    width: 100%
+    z-index: 9999
+    transition: background-color ease .3s
+    padding: 20px 0 0
+
+    .container
+        z-index: unset
+        max-width: 1380px
+
+    .logo
+        width: 150px
+        display: inline-block
+        align-self: end
+        margin: 0
+
+    .phone
+        color: $black
+        text-align: right
+        b
+            color: $black
+
+    .nav
+        margin: 0 auto 0 40px
+        padding-right: 30px
+        list-style: none
+        a
+            display: inline-block
+            font-weight: 500
+            font-size: 16px
+            color: $black
+            line-height: 150%
+            padding: 12px 14px 8px
+            text-transform: uppercase
+            &:hover
+                opacity: 1
+                color: $black
+                background-color: $yelow
+
+        .hidden
+            display: none
+
+    .btn
+        margin-left: 30px
+        &-menu
+            display: none
+
+    @media screen and ( max-width: 1500px )
+        padding: 10px 0 12px
+        .logo
+            width: 150px
+
+        .nav
+            a
+                font-size: 14px
+
+        .phone
+            margin-top: 8px
+
+    @media screen and ( max-width: 1000px )
+        border-bottom: 1px solid rgba(255, 255, 255, .20)
+        &::before
+            width: 100%
+
+        .nav
+            position: fixed
+            top: 0
+            left: 0
+            z-index: 9999
+            height: 100vh
+            width: 300px
+            max-width: 80%
+            background-color: #fff
+            display: block
+            margin: 0
+            padding: 70px 0 0
+            visibility: hidden
+            transform: translateX(-100%)
+            opacity: 0
+            transition: all .5s cubic-bezier(0.4, -0.02, 0, 0.96)
+            box-shadow: 250px 0 0 450px rgba(0, 0, 0, .5)
+            li
+                padding: 0
+
+            a
+                color: $black
+                font-size: 18px
+                font-weight: 600
+                display: block
+                padding: 12px 30px
+
+            .hidden
+                display: block
+                padding: 10px 0 0
+                .phone
+                    width: unset
+                    height: unset
+                    text-align: left
+                    background-image: none
+                    b
+                        font-size: 20px
+                        color: $prime
+                    span
+                        color: $black
+                        font-size: 14px
+
+        .phone
+            margin: 0 30px 0 auto
+
+        .btn
+            display: none
+            &-menu
+                display: inline-block
+                z-index: 9999999
+
+        &.active
+            .nav
+                visibility: visible
+                transform: translateX(0)
+                opacity: 1
+
+    @media screen and ( max-width: 700px )
+        padding: 8px 0 10px
+        position: fixed
+        background-color: rgba(0, 0, 0, 0.15)
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+        backdrop-filter: blur(4.5px)
+        .logo
+            max-width: 130px
+            margin: 0
+            position: absolute
+            left: 50%
+            top: 50%
+            transform: translate(-50%, -50%)
+
+        .container
+            padding: 8px 16px 4px
+
+        .phone
+            display: inline-block
+            margin: 0
+            width: 40px
+            height: 40px
+            background-image: url('../img/phone.svg')
+            background-repeat: no-repeat
+            background-position: center center
+            background-size: contain
+            span, b
+                font-size: 1px
+                color: transparent
+
+        .btn
+            &-menu
+                margin-top: 4px

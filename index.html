@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/jquery.fancybox.min.css"> -->
+</head>
+
+<body>
+    <header class="header">
+        <div class="container wrap">
+            <img src="img/logo.png" alt="логотип стрижи" class="logo">
+            <ul class="nav wrap">
+                <li><a href="#about">Преимушества</a></li>
+                <li><a href="#photoshoot">Фотосессия</a></li>
+                <li><a href="#address">Адрес</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li class="hidden">
+                    <a href="tel:89050802341" class="phone">
+                        <span>Телефон:</span>
+                        <b>8(905)080-23-41</b>
+                    </a>
+                </li>
+                <li class="hidden">
+                    <a href="mailto:reizbih@mail.ru" class="phone">
+                        <span>Наша почта:</span>
+                        <b>reizbih@mail.ru</b>
+                    </a>
+                </li>
+            </ul>
+            <a href="tel:89050802341" class="phone">
+                <span>Телефон для справок:</span>
+                <b>8(905)080-23-41</b>
+            </a>
+            <button class="btn btn-outline">подать заявку</button>
+            <button class="btn-menu"><span></span></button>
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="container">
+            <h1>Электромобильный <b>погрузчик</b></h1>
+            <p><b>Технологии электромобиля</b> - теперь <br> в вилочном погрузчике</p>
+            <img src="img/jac.png" class="main__img" alt="Электромобильный погрузчик">
+            <div class="main-col">
+                <div class="main-item">
+                    <img src="img/icon-1.svg" alt="img">
+                    <p>
+                        Способен работать на улице <br> при температуре до 30<sup>o</sup>
+                    </p>
+                </div>
+                <div class="main-item pop">
+                    <img src="img/icon-2.svg" alt="img">
+                    <p>
+                        <b>8 часов работы</b> <br>
+                        1.5 часа до полного заряда
+                    </p>
+                </div>
+                <div class="main-item">
+                    <img src="img/icon-3.svg" alt="img">
+                    <p>Степень <br> пылезашитности IP65</p>
+                </div>
+                <div class="main-item">
+                    <img src="img/icon-4.svg" alt="img">
+                    <p>Клиренс и разресовка <br> автопогрузчика</p>
+                </div>
+                <div class="main-item">
+                    <img src="img/icon-4.svg" alt="img">
+                    <p>
+                        Стоимость одной 8-ми <br> часовой смены <b>88 рублей</b>. <br>
+                        <span>(при стоимости 1кВт = 5,95 руб.)</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="photoshoot" id="photoshoot">
+        <h2 class="container">Фотосессия В Аэродромe</h2>
+        <div class="slider">
+            <div class="slider-item">
+                <a href="img/slide-1.jpg" data-fancybox="slider">
+                    <img loading="lazy" src="img/slide-1.jpg" alt="img">
+                </a>
+            </div>
+            <div class="slider-item">
+                <a href="img/slide-2.jpg" data-fancybox="slider">
+                    <img loading="lazy" src="img/slide-2.jpg" alt="img">
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="footer" id="address">
+        <iframe loading="lazy"></iframe>
+        <div class="container wrap">
+            <div class="col">
+                <a href="#main" class="logo">
+                    <img src="img/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="col" id="contacts">
+                <a href="tel:89050802341" class="phone">
+                    <span>Телефон для справок:</span>
+                    <b>8(905)080-23-41</b>
+                </a>
+                <a href="mailto:reizbih@mail.ru" class="phone">
+                    <span>Наша почта:</span>
+                    <b>reizbih@mail.ru</b>
+                </a>
+            </div>
+            <div class="col">
+                <h4>Навигация</h4>
+                <nav>
+                    <a href="#about">О нас</a>
+                    <a href="#teaching">Обучение</a>
+                    <a href="#photoshoot">Фотосессия</a>
+                    <a href="#address">Адрес</a>
+                </nav>
+            </div>
+            <div class="col pop">
+                <h4>Хотите задать вопрос?</h4>
+                <form action="./sendmail.php" method="post">
+                    <input type="hidden" name="type" value="2">
+                    <input type="hidden" name="service" value="Заявка на обратный звонок!">
+                    <input type="tel" name="phone_number" placeholder="Номер телефона" required>
+                    <button class="btn" type="submit"></button>
+                </form>
+                <i>
+                    Если вас интересует какой либо вопрос и вы не можете дозвонится? Оставьте ваш номер и наш специалист
+                    позвонит вам!
+                </i>
+            </div>
+
+        </div>
+        <div class="developt">
+            <a href="https://m-idea.ru" target="_blank">Cайт разработан веб-студией <b>IT IDEA</b></a>
+        </div>
+    </footer>
+
+    <a href="#main" class="scroll-up"></a>
+
+    <!-- <script src="./js/jquery-3.4.1.min.js" defer></script>
+    <script src="./js/slick.min.js" defer></script>
+    <script src="./js/jquery.inputmask.min.js" defer></script>
+    <script src="./js/scripts.js?ver=3456" defer></script> -->
+    <!-- <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
+
+</body>
+
+</html>

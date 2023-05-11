@@ -1,0 +1,409 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    border: none
+    outline: none
+
+$black: #000
+$yelow: #ffcc0046
+$third: #3C84AB
+$second: #85CDFD
+$prime: #FFCC00
+
+body
+    min-height: 100vh
+    color: #000
+    display: flex
+    flex-direction: column
+    background-color: #fff
+    font-family: 'Montserrat', sans-serif
+    scroll-behavior: smooth
+
+    &.active
+        overflow: hidden
+
+h1,h2,h3,h4,h5,h6
+    font-weight: 400
+    line-height: 120%
+    text-transform: uppercase
+    margin: 0 0 20px
+    b, strong 
+        font-weight: 900
+
+h1
+    font-size: 100px
+    text-transform: uppercase
+
+h2
+    font-size: 54px
+    margin-bottom: 33px
+
+h3
+    font-size: 32px
+    margin-bottom: 15px
+
+h4
+    font-weight: 600
+    font-size: 24px
+    margin-bottom: 8px
+
+p, li
+    font-weight: 400
+    font-size: 18px
+    line-height: 150%
+    margin: 0 0 24px
+
+ul, ol
+    padding-left: 25px
+    margin-bottom: 24px
+    li
+        margin: 0
+        padding: 5px 0
+
+.container
+    width: 100%
+    max-width: 1330px
+    padding: 0 32px
+    margin: 0 auto
+    position: relative
+    z-index: 1
+
+img
+    max-width: 100%
+
+a,
+button
+    text-decoration: none
+    color: #000
+    transition: all ease .3s
+    background-color: transparent
+    &:active
+        transform: scale(.98)
+
+    &:hover
+        opacity: .8
+
+section
+    padding: 80px 0
+    position: relative
+
+.btn
+    font-weight: 600
+    font-size: 18px
+    line-height: 130%
+    text-transform: uppercase
+    display: inline-block
+    vertical-align: middle
+    text-align: center
+    color: #fff
+    padding: 20px 40px 17px
+    background-color: $prime
+    border-radius: 50px
+
+    &-menu
+        z-index: 9999
+        display: inline-block
+        position: relative
+        width: 50px
+        height: 45px
+        margin: 0
+        span
+            position: absolute
+            top: 50%
+            left: 20%
+            margin-top: -2px
+            display: block
+            width: 80%
+            height: 1.4px
+            transition: all ease .3s
+            border-radius: 2px
+            background-color: #fff
+            &::before,
+            &::after
+                content: ''
+                display: block
+                width: 60%
+                height: 1px
+                background-color: #fff
+                position: absolute
+                top: 10px
+                right: 0
+                transition: all ease .3s
+                border-radius: 2px
+            &::after
+                top: -10px
+                width: 100%
+                left: 0
+
+        &.active
+            span
+                top: 55%
+                left: 50%
+                transform: translate(-50%, -50%) rotate(-45deg)
+                background-color: #fff
+                &::before
+                    background-color: transparent
+                &::after
+                    top: 50%
+                    width: 100%
+                    left: 50%
+                    transform: translate(-50%, -50%) rotate(-90deg)
+                    background-color: #fff
+
+    &-outline
+        background-color: transparent
+        border: 2px solid $black
+        color: $black
+
+        &.loading
+            background-color: rgba(#fff, .3)
+
+    &.black
+        background-color: #000
+        color: #fff
+        box-shadow: none !important
+        &.loading
+            background-color: rgba($black, .3)
+
+    &:hover
+
+    &:active
+        opacity: 1
+        transform: scale(.95)
+
+    &[disabled],
+    &.loading
+        color: rgba(0, 0, 0, .2)
+        background-color: rgba($prime, .3)
+        cursor: unset
+        animation: none
+        pointer-events: none
+        box-shadow: none
+
+    &.loading
+        color: transparent
+        background-image: url('../img/loader.gif')
+
+    &-second
+        box-shadow: none
+        background-color: transparent
+        color: #fff
+        border: 1px solid #fff
+        &:hover
+            opacity: 1
+            box-shadow: none
+            background-color: $yelow
+            border-color: $yelow
+
+.phone
+    display: inline-block
+    text-align: left
+    vertical-align: middle
+    span
+        font-weight: 400
+        font-size: 16px
+        line-height: 130%
+        display: block
+    b
+        font-weight: 600
+        font-size: 22px
+        color: $second
+        line-height: 130%
+
+blockquote
+    padding: 20px 25px
+    color: #000000
+    background-color: $second
+    margin: 0 0 24px 0
+    p
+        margin: 0
+        font-size: 14px
+
+    &.info
+        background-color: rgba(0, 0, 0, .1)
+
+strong, b
+    font-weight: 700
+
+form
+    .btn
+        width: 100%
+
+.wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+
+input,
+textarea,
+select
+    display: block
+    width: 100%
+    height: 55px
+    background: #fff
+    font-weight: 500
+    font-size: 14px
+    line-height: 32px
+    padding: 0 20px
+    text-align: left
+    color: $black
+    appearance: none
+    border: 1px solid rgba($black, .6)
+    margin-bottom: 12px
+    &::placeholder
+        color: rgba(#000 , .6)
+        font-weight: 300
+
+label
+    color: $black
+    display: block
+    font-weight: 400
+    font-size: 15px
+    line-height: 140%
+    margin-bottom: 5px
+    opacity: .7
+    i
+        color: red
+
+select
+    cursor: pointer
+    background-image: url('../img/arrow-down.svg')
+    background-repeat: no-repeat
+    background-position: center right 12px
+    background-size: 20px auto
+    padding-right: 40px
+    position: relative
+    z-index: 1
+    margin: 0
+
+.scroll-up
+    display: none
+    width: 40px
+    height: 40px
+    background-image: url('../img/arrow-up.svg')
+    background-repeat: no-repeat
+    background-size: 60%
+    background-position: center center
+    position: fixed
+    bottom: 35px
+    right: 35px
+    background-color: $second
+    z-index: 1111
+    transition: none
+
+input[name="volume"]
+    background-image: url('../img/kg.svg')
+    background-repeat: no-repeat
+    background-position: center right 20px
+    background-size: 25px auto
+
+@keyframes shadowErr
+    0%
+        box-shadow: 0 0 20px 0 rgba(red, .4)
+    100%
+        box-shadow: none
+
+textarea
+    min-height: 200px
+    line-height: 130%
+    resize: none
+    padding: 8px 10px 0
+    height: unset
+
+@media screen and ( max-width: 1500px )
+    .container
+        max-width: 1200px
+
+    h1
+        font-size: 71px
+        line-height: 130%
+
+    h2
+        font-size: 44px
+
+    .phone
+        span
+            font-size: 14px
+        b
+            font-size: 20px
+
+    .btn
+        font-size: 16px
+
+    p, li
+        font-size: 16px
+        margin-bottom: 30px
+
+@media screen and ( max-width: 1100px )
+
+    h1
+        font-size: 50px
+
+    h3
+        font-size: 26px
+
+    h4
+        font-size: 20px
+
+    section
+        padding: 60px 0
+
+    .logo
+        max-width: 200px
+
+    .btn
+        min-width: 180px
+        font-size: 14px
+        padding: 20px 24px 19px
+        min-width: 200px
+
+@media screen and ( max-width: 900px )
+    h1
+        // font-size: 36px
+
+@media screen and ( max-width: 700px )
+    .container
+        padding: 0 16px
+
+    h1
+        font-size: 28px
+
+    h2
+        font-size: 24px
+        margin-bottom: 20px
+
+    p, li
+        font-size: 14px
+        line-height: 140%
+        margin-bottom: 20px
+
+    h3
+        font-size: 20px
+        margin-bottom: 15px
+
+    h4
+        font-size: 18px
+
+    select
+        font-size: 16px
+
+    .btn
+        &-menu
+            width: 40px
+            height: 30px
+            span
+                width: 100%
+                left: 0
+                &::before,
+                &::after
+                    right: 0
+
+    input,
+    textarea,
+    select
+        height: 55px
+
+    label
+        font-size: 14px

@@ -1,0 +1,134 @@
+@import 'normolize'
+@import 'elements'
+@import 'header'
+
+.main
+    position: relative
+    z-index: 1
+    padding: 62px 0
+    overflow: hidden
+    &::before
+        content: ''
+        display: block
+        width: 100%
+        height: 100%
+        z-index: -1
+        position: absolute
+        top: 0
+        left: 0
+        background-image: url('../img/JAC.svg')
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: 90% auto
+        opacity: .5
+    &-col
+        max-width: 400px
+        padding: 25px 0 0 25px
+        background: linear-gradient(94.2deg, #FFFFFF 16.79%, rgba(255, 255, 255, 0) 88.76%)
+        box-shadow: -80px -10px 100px -80px rgba(0, 0, 0, 0.2)
+        border-radius: 10px
+        position: relative
+        z-index: 1
+
+    &__img
+        position: absolute
+        right: -12%
+        bottom: 8%
+        width: 93%
+        pointer-events: none
+        z-index: 1
+
+    &-item
+        display: inline-flex
+        align-items: center
+        background-color: #E4E4E4
+        border-radius: 12px
+        padding: 10px 35px 10px 12px
+        margin: 0 0 10px
+        p
+            font-weight: 400
+            font-size: 16px
+            line-height: 130%
+            margin: 0 0 0 18px
+            span
+                font-size: 14px
+                opacity: .5
+
+        &.pop
+            color: #fff
+            background-color: #313131
+
+@import 'slick'
+
+.photoshoot
+    overflow: hidden
+    h2
+        text-align: center
+        max-width: 520px
+
+    .slider
+        overflow: hidden
+        position: relative
+        display: flex
+        &::before,
+        &::after
+            content: ''
+            display: block
+            width: 120%
+            height: 220px
+            position: absolute
+            left: -10%
+            top: -120px
+            z-index: 1
+            background-color: #fff
+            border-radius: 50%
+            pointer-events: none
+        &::after
+            top: auto
+            bottom: -120px
+
+        &-item
+            min-width: 500px
+            width: 500px
+            height: 900px
+            max-height: 115vh
+            margin: 0 7px
+            img
+                height: 100%
+                width: 100%
+                object-fit: cover
+
+@media screen and ( max-width: 1500px )
+    .main
+
+@media screen and ( max-width: 1100px )
+    .main
+
+    .photoshoot
+        .slider
+            &-item
+                height: 700px
+
+@media screen and ( max-width: 700px )
+    .main
+
+    .photoshoot
+        .slider
+            &::before,
+            &::after
+                width: 180%
+                left: -40%
+                top: -50px
+                height: 100px
+
+            &::after
+                top: auto
+                bottom: -50px
+
+            &-item
+                min-width: unset
+                width: 90vw
+                max-height: 88vh
+                margin: 0 4px
+
+@import 'footer'
