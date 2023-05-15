@@ -72,10 +72,25 @@ header
                 border-width: 1px
                 line-height: 120%
 
-    @media screen and ( max-width: 1000px )
+    @media screen and ( max-width: 1200px )
         border-bottom: 1px solid rgba(255, 255, 255, .20)
+        padding: 14px 0
+        position: relative
         &::before
-            width: 100%
+            content: ''
+            display: block
+            height: 100%
+            position: absolute
+            top: 0
+            right: 0
+            width: 90%
+            z-index: -1
+            pointer-events: none
+            border-bottom: 1px solid transparent
+            border-image: linear-gradient(to right, rgba(0, 0, 0, 0) 18%, #000) 1
+
+        .logo
+            max-width: 100px
 
         .nav
             position: fixed
@@ -136,24 +151,14 @@ header
 
     @media screen and ( max-width: 700px )
         padding: 8px 0 10px
-        position: fixed
-        background-color: rgba(0, 0, 0, 0.15)
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5)
-        backdrop-filter: blur(4.5px)
         .logo
-            max-width: 130px
-            margin: 0
-            position: absolute
-            left: 50%
-            top: 50%
-            transform: translate(-50%, -50%)
 
         .container
             padding: 8px 16px 4px
 
         .phone
-            display: inline-block
-            margin: 0
+            display: block
+            margin: 0 20px 0 auto
             width: 40px
             height: 40px
             background-image: url('../img/phone.svg')
@@ -166,4 +171,3 @@ header
 
         .btn
             &-menu
-                margin-top: 4px

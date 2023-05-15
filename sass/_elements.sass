@@ -107,28 +107,30 @@ section
         position: relative
         width: 50px
         height: 45px
+        background-color: $prime
+        box-shadow: 0px 4px 24px -2px rgba(255, 204, 0, 0.37)
         margin: 0
         span
             position: absolute
             top: 50%
-            left: 20%
-            margin-top: -2px
+            left: 15%
+            margin-top: -1px
             display: block
-            width: 80%
-            height: 1.4px
+            width: 70%
+            height: 2px
             transition: all ease .3s
             border-radius: 2px
-            background-color: #fff
+            background-color: #000
             &::before,
             &::after
                 content: ''
                 display: block
-                width: 60%
-                height: 1px
-                background-color: #fff
+                width: 100%
+                height: 2px
+                background-color: #000
                 position: absolute
                 top: 10px
-                right: 0
+                left: 0
                 transition: all ease .3s
                 border-radius: 2px
             &::after
@@ -141,7 +143,6 @@ section
                 top: 55%
                 left: 50%
                 transform: translate(-50%, -50%) rotate(-45deg)
-                background-color: #fff
                 &::before
                     background-color: transparent
                 &::after
@@ -149,7 +150,6 @@ section
                     width: 100%
                     left: 50%
                     transform: translate(-50%, -50%) rotate(-90deg)
-                    background-color: #fff
 
     &-outline
         background-color: transparent
@@ -319,7 +319,7 @@ textarea
     h2
         font-size: 42px
 
-    h3 
+    h3
         font-size: 36px
 
     .phone
@@ -335,13 +335,16 @@ textarea
         font-size: 16px
         margin-bottom: 30px
 
-@media screen and ( max-width: 1100px )
+@media screen and ( max-width: 1200px )
 
     h1
         font-size: 50px
 
+    h2
+        font-size: 32px
+
     h3
-        font-size: 26px
+        font-size: 24px
 
     h4
         font-size: 20px
@@ -390,14 +393,6 @@ textarea
 
     .btn
         &-menu
-            width: 40px
-            height: 30px
-            span
-                width: 100%
-                left: 0
-                &::before,
-                &::after
-                    right: 0
 
     input,
     textarea,
