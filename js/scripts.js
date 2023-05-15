@@ -22,9 +22,20 @@ $(document).ready(function () {
         arrows: true,
         infinite: true,
         speed: 300,
-        slidesToShow: 1,
+        slidesToShow: 3,
         swipeToSlide: true,
         centerMode: true,
+        slidesToScroll: 1,
+        variableWidth: false,
+    });
+    $('.guarantee-slider').slick({
+        dots: false,
+        arrows: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        swipeToSlide: true,
+        centerMode: false,
         slidesToScroll: 1,
         variableWidth: true,
     });

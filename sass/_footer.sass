@@ -1,19 +1,22 @@
 footer
-    background-color: $prime
+    background-color: #fff
     position: relative
     z-index: 1
     margin-top: 80px
+
     .container
-        color: #fff
+        color: #000
         align-items: flex-start
+        justify-content: flex-start
+        gap: 8%
         padding: 46px 15px 50px
         a
-            color: #fff
+            color: #000
             display: block
             min-width: 90%
 
     .address
-        color: #fff
+        color: #000
         position: absolute
         z-index: 1
         background-color: $prime
@@ -32,7 +35,7 @@ footer
 
     iframe
         width: 100% !important
-        height: 640px !important
+        height: 540px !important
         background-color: #eee
         margin-bottom: 40px
 
@@ -56,10 +59,7 @@ footer
             background-size: 50%
 
     .col
-        max-width: 320px
-        &:first-child
-            position: relative
-            top: -30px
+        max-width: 330px
         i
             font-style: normal
             font-weight: 400
@@ -87,7 +87,8 @@ footer
 
     .logo
         display: block
-        width: 280px
+        width: 190px
+        min-width: unset !important
         margin: 0
         position: relative
         top: -10px
@@ -97,7 +98,7 @@ footer
     .phone
         margin-bottom: 22px
         b
-            color: #fff
+            color: #000
 
     @media screen and ( max-width: 1340px )
         .address
@@ -127,7 +128,7 @@ footer
                 font-size: 14px
 
 .developt
-    background-color: #fff
+    background-color: rgba(0, 0, 0, .1)
     text-align: center
     color: #000 !important
     a

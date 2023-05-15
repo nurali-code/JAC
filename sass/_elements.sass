@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5,h6
     line-height: 120%
     text-transform: uppercase
     margin: 0 0 20px
-    b, strong 
+    b, strong
         font-weight: 900
 
 h1
@@ -36,7 +36,7 @@ h1
     text-transform: uppercase
 
 h2
-    font-size: 54px
+    font-size: 46px
     margin-bottom: 33px
 
 h3
@@ -96,7 +96,7 @@ section
     display: inline-block
     vertical-align: middle
     text-align: center
-    color: #fff
+    color: #000
     padding: 19px 38px 16px
     background-color: $prime
     border-radius: 50px
@@ -208,20 +208,8 @@ section
     b
         font-weight: 600
         font-size: 22px
-        color: $second
+        color: #000
         line-height: 130%
-
-blockquote
-    padding: 20px 25px
-    color: #000000
-    background-color: $second
-    margin: 0 0 24px 0
-    p
-        margin: 0
-        font-size: 14px
-
-    &.info
-        background-color: rgba(0, 0, 0, .1)
 
 strong, b
     font-weight: 700
@@ -250,8 +238,9 @@ select
     text-align: left
     color: $black
     appearance: none
-    border: 1px solid rgba($black, .6)
-    margin-bottom: 12px
+    border-radius: 60px
+    border: 1px solid rgba($black, .8)
+    margin-bottom: 16px
     &::placeholder
         color: rgba(#000 , .6)
         font-weight: 300
@@ -260,9 +249,9 @@ label
     color: $black
     display: block
     font-weight: 400
-    font-size: 15px
+    font-size: 14px
     line-height: 140%
-    margin-bottom: 5px
+    margin-bottom: 2px
     opacity: .7
     i
         color: red
@@ -280,18 +269,24 @@ select
 
 .scroll-up
     display: none
-    width: 40px
-    height: 40px
+    width: 60px
+    height: 60px
+    border-radius: 50%
     background-image: url('../img/arrow-up.svg')
     background-repeat: no-repeat
     background-size: 60%
     background-position: center center
     position: fixed
-    bottom: 35px
-    right: 35px
-    background-color: $second
+    bottom: 80px
+    right: 40px
+    background-color: $prime
     z-index: 1111
     transition: none
+
+fieldset
+    border: none
+    margin: 0
+    padding: 0
 
 input[name="volume"]
     background-image: url('../img/kg.svg')
@@ -317,11 +312,15 @@ textarea
         max-width: 1200px
 
     h1
-        font-size: 71px
-        line-height: 130%
+        font-size: 64px
+        line-height: 120%
+        margin-bottom: 15px
 
     h2
-        font-size: 44px
+        font-size: 42px
+
+    h3 
+        font-size: 36px
 
     .phone
         span
