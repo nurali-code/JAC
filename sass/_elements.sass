@@ -182,7 +182,11 @@ section
         box-shadow: none
 
     &.loading
+        transition: none
         color: transparent
+        background-repeat: no-repeat
+        background-position: center center
+        background-size: contain
         background-image: url('../img/loader.gif')
 
     &-second
@@ -260,12 +264,16 @@ select
     cursor: pointer
     background-image: url('../img/arrow-down.svg')
     background-repeat: no-repeat
-    background-position: center right 12px
+    background-position: center right 18px
     background-size: 20px auto
     padding-right: 40px
     position: relative
     z-index: 1
     margin: 0
+
+hr
+    margin: 25px 0 20px
+    border: 1px solid rgba(0, 0, 0, .6)
 
 .scroll-up
     display: none
@@ -287,6 +295,45 @@ fieldset
     border: none
     margin: 0
     padding: 0
+    &.checkbox
+        display: inline-block
+        margin-bottom: 5px !important
+        label
+            cursor: pointer
+            display: block
+            padding: 12px 20px 10px 47px
+            border: 1px solid #000
+            position: relative
+            border-radius: 50px
+            &::before,
+            &::after
+                content: ''
+                display: inline-block
+                width: 26px
+                height: 26px
+                border: 1px solid #000
+                border-radius: 50%
+                position: absolute
+                top: 50%
+                left: 11px
+                transform: translateY(-50%)
+                box-sizing: border-box
+            &::after
+                transform-origin: 50% 0%
+
+        input
+            display: none
+            &:checked ~ label
+                background-color: rgba($prime, .22)
+                border-color: rgba($prime, .22)
+                &:before
+                    border-width: 2px
+                    border-color: rgba($prime, 1)
+                    background-color: #fff
+                &::after
+                    transform: scale(.5) translateY(-50%)
+                    border-color: rgba($prime, 1)
+                    background-color: rgba($prime, 1)
 
 input[name="volume"]
     background-image: url('../img/kg.svg')

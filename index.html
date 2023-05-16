@@ -25,21 +25,21 @@
                 <li><a href="#address">Сравнение</a></li>
                 <li><a href="#contacts">Контакты</a></li>
                 <li class="hidden">
-                    <a href="tel:+79609643703" class="phone">
+                    <a href="tel:+78007757794" class="phone">
                         <span>Телефон:</span>
-                        <b>+7(960) 964-37-03</b>
+                        <b>+7(800)775-77-94</b>
                     </a>
                 </li>
                 <li class="hidden">
-                    <a href="mailto:knw@jacvostok.ru" class="phone">
+                    <a href="mailto:info@jacvostok.ru" class="phone">
                         <span>Наша почта:</span>
-                        <b>knw@jacvostok.ru</b>
+                        <b>info@jacvostok.ru</b>
                     </a>
                 </li>
             </ul>
-            <a href="tel:+79609643703" class="phone">
+            <a href="tel:+78007757794" class="phone">
                 <span>Телефон для справок:</span>
-                <b>+7(960) 964-37-03</b>
+                <b>+7(800)775-77-94</b>
             </a>
             <button class="btn btn-outline" data-modal="modal-form">Подать заявку</button>
             <button class="btn-menu"><span></span></button>
@@ -55,7 +55,7 @@
                 <div class="main-item">
                     <img src="img/icon-1.svg" alt="img">
                     <p>
-                        Способен работать на улице <br> при температуре до 30<sup>o</sup>
+                        Способен работать на улице <br> при температуре до 40<sup>o</sup>
                     </p>
                 </div>
                 <div class="main-item pop">
@@ -358,11 +358,11 @@
                     детали
                     заказа и ответить на все ваши вопросы.
                 </p>
-                <button class="btn">получить коммерческое предложение</button>
+                <button class="btn" data-modal="modal-quote">получить коммерческое предложение</button>
                 <div class="order-contacts">
-                    <a href="tel:+79609643703" class="phone">
+                    <a href="tel:+78007757794" class="phone">
                         <span>Телефон:</span>
-                        <b>+7(960) 964-37-03</b>
+                        <b>+7(800)775-77-94</b>
                     </a>
                     <a href="#" class="phone">
                         <span>Наш Адресс:</span>
@@ -372,14 +372,14 @@
                             24а/1, оф. 205, 2 этаж
                         </b>
                     </a>
-                    <a href="mailto:knw@jacvostok.ru" class="phone">
+                    <a href="mailto:info@jacvostok.ru" class="phone">
                         <span>Наша почта:</span>
-                        <b>knw@jacvostok.ru</b>
+                        <b>info@jacvostok.ru</b>
                     </a>
                 </div>
             </div>
             <div class="order-img">
-                <form class="order-form" action="#">
+                <form class="order-form" action="./sendmail.php" method="post">
                     <fieldset>
                         <label>Как вас зовут <i>*</i></label>
                         <input type="text" id="name" name="name" required placeholder="Как вас зовут?">
@@ -419,13 +419,13 @@
 
             </div>
             <div class="col" id="contacts">
-                <a href="tel:+79609643703" class="phone">
+                <a href="tel:+78007757794" class="phone">
                     <span>Телефон для справок:</span>
-                    <b>+7(960) 964-37-03</b>
+                    <b>+7(800)775-77-94</b>
                 </a>
-                <a href="mailto:knw@jacvostok.ru" class="phone">
+                <a href="mailto:info@jacvostok.ru" class="phone">
                     <span>Наша почта:</span>
-                    <b>knw@jacvostok.ru</b>
+                    <b>info@jacvostok.ru</b>
                 </a>
             </div>
         </div>
@@ -438,8 +438,8 @@
     <div class="modal" id="modal-form">
         <div class="modal-content">
             <button class="modal-close">&#x2715;</button>
-            <h3>Спасибо, за заявку</h3>
-            <form class="order-form" action="#">
+            <h3>Подать <b>заявку</b></h3>
+            <form action="./sendmail.php" method="post">
                 <fieldset>
                     <label>Как вас зовут <i>*</i></label>
                     <input type="text" id="name" name="name" required placeholder="Как вас зовут?">
@@ -452,34 +452,38 @@
             </form>
         </div>
     </div>
-    <div class="modal" id="modal-cal">
+
+    <div class="modal" id="modal-quote">
         <div class="modal-content">
             <button class="modal-close">&#x2715;</button>
-            <h3>Спасибо, за заявку</h3>
-            <form class="order-form" action="#">
-                <fieldset>
-                    <label>Грузоподёмность</label>
-                    <select name="capacity" id="capacity">
-                        <option value="1500 кг">1500 кг</option>
-                        <option value="2000 кг">2000 кг</option>
-                        <option value="2500 кг">2500 кг</option>
-                        <option value="3000 кг">3000 кг</option>
-                        <option value="3500 кг">3500 кг</option>
-                        <option value="4000 кг">4000 кг</option>
-                        <option value="4500 кг">4500 кг</option>
-                        <option value="5000 кг">5000 кг</option>
-                    </select>
-                </fieldset>
-                <fieldset>
-                    <label>Грузоподёмность</label>
-                    <select name="height" id="height">
-                        <option value="3000 мм">3000 мм</option>
-                        <option value="4800 мм">4800 мм</option>
-                        <option value="6000 мм">6000 мм</option>
-                    </select>
-                </fieldset>
+            <h3><b>КОММЕРЧЕСКОЕ</b> ПРЕДЛОЖЕНИЕ</h3>
+            <form action="./sendmail.php" method="post">
+                <input type="hidden" name="hours" value="serv">
+                <div class="wrap">
+                    <fieldset>
+                        <label>Грузоподёмность</label>
+                        <select name="capacity" id="capacity">
+                            <option value="1500 кг">1500 кг</option>
+                            <option value="2000 кг">2000 кг</option>
+                            <option value="2500 кг">2500 кг</option>
+                            <option value="3000 кг">3000 кг</option>
+                            <option value="3500 кг">3500 кг</option>
+                            <option value="4000 кг">4000 кг</option>
+                            <option value="4500 кг">4500 кг</option>
+                            <option value="5000 кг">5000 кг</option>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <label>Высота</label>
+                        <select name="height" id="height">
+                            <option value="3000 мм">3000 мм</option>
+                            <option value="4800 мм">4800 мм</option>
+                            <option value="6000 мм">6000 мм</option>
+                        </select>
+                    </fieldset>
+                </div>
                 <fieldset class="checkbox">
-                    <input type="checkbox" value="Навесное оборудовани" name="frame" id="frame">
+                    <input type="checkbox" value="Каркас" name="frame" id="frame">
                     <label for="frame">Каркас</label>
                 </fieldset>
                 <fieldset class="checkbox">
@@ -495,6 +499,7 @@
                     <label for="offcet">Смещение вил</label>
                 </fieldset>
 
+                <hr>
 
                 <fieldset>
                     <label>Как вас зовут <i>*</i></label>
@@ -504,7 +509,7 @@
                     <label>Номер телефона <i>*</i></label>
                     <input type="tel" name="phone_number" id="phone_number" required placeholder="Ваш номер телефона">
                 </fieldset>
-                <button type="submit" class="btn">подать заявку</button>
+                <button type="submit" class="btn">Подать заявку</button>
             </form>
         </div>
     </div>
