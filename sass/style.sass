@@ -1,6 +1,7 @@
 @import 'normolize'
 @import 'elements'
 @import 'header'
+@import 'modal'
 
 .main
     position: relative
@@ -27,7 +28,6 @@
 
     h1
         font-weight: 500
-        // font-style: italic
 
     &__text
         font-size: 22px
@@ -349,10 +349,13 @@
     h2
         text-align: center
         margin-bottom: 70px
+
     ol
+        padding: 0
         counter-reset: counter
         list-style-type: none
         align-items: flex-start
+        margin: 0
 
     li
         counter-increment: counter
@@ -396,6 +399,7 @@
         margin: 0
 
 .order
+    overflow: hidden
     h2
         margin-bottom: 15px
     p
@@ -462,19 +466,46 @@
 
 @media screen and ( max-width: 1200px )
     .main
+        &::before
+            opacity: .6
+            height: 48%
+            background-size: 120% auto
+
         h1
             text-align: center
+
+        &__text
+            font-size: 14px
+
         &__img
-            position: static
+            width: 110vw
+            max-width: 110vw
+            position: relative
+            left: 50%
+            transform: translateX(-50%)
             display: block
-            margin: 0 auto
+            margin: 0 auto 30px
+
         &__text
             text-align: center
 
+        &-col
+            background-color: transparent
+            padding: 0
+
     .photoshoot
         .slider
+            &::before,
+            &::after
+                height: 160px
+            &::before
+                top: -80px
+            &::after
+                bottom: -80px
+
             &-item
                 height: 700px
+                margin: 0 4px
 
     .features
         h2
@@ -512,8 +543,148 @@
             display: block
             transform: translateX(-50%)
 
+    .comparison
+        h2
+            margin-bottom: 20px
+        .info
+            font-size: 14px
+            line-height: 130%
+            padding: 17px 30px 15px 70px
+            background-position: center left 18px
+            background-size: 40px auto
+        &-total
+            display: none
+        .right,
+        .left
+            width: 100%
+
+        &-img
+            margin-bottom: 30px
+            text-align: center
+            img
+                margin: 0
+                width: 500px
+                max-width: 100%
+
+        &-img::before,
+        &-item
+            border-radius: 0 !important
+        &-item
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            padding-top: 0
+            margin-bottom: 30px
+            padding-bottom: 10px
+            img
+                order: 1
+                margin: 0
+                position: relative
+                top: -20px
+            p
+                text-align: center !important
+                order: 2
+                width: 100%
+
+    .guarantee
+        &-title
+            padding: 0 15px
+
+        &-top
+            margin-bottom: 40px
+        &-img
+            width: 100%
+        p
+            margin: 0
+
+        &-slider
+            padding: 0
+            &::before
+                display: none
+
+            .slick
+                &-next
+                    right: 15px
+
+                &-slide
+
+        &-item
+            margin: 0 4px
+            img
+                border-width: 2px
+                border-color: $prime
+
+        &-bottom
+            .guarantee
+                &-title
+                    order: 1
+                    max-width: 100%
+                    margin-bottom: 40px
+
+                &-slider
+                    order: 2
+                    max-width: 100%
+                    width: 100%
+
+    .process
+        ol
+            align-items: stretch
+        li
+            width: 49%
+            position: relative
+            top: auto !important
+            margin: 0 0 60px !important
+            &::before
+                font-size: 60px
+                top: -45px
+
+    .order
+        .container
+            display: block
+        &-title
+            width: 100%
+            p
+                max-width: 100%
+
+        .phone
+            vertical-align: top
+
+        &-img
+            width: 100%
+            margin-top: 60px
+            z-index: 111
+            position: relative
+
+        &-form
+            top: -100px
+            right: 20px
+            left: auto
+            bottom: auto
+            box-shadow: -20px -22px 215px -61px rgb(0 0 0 / 25%)
+
 @media screen and ( max-width: 700px )
     .main
+        &-item
+            padding: 10px 11px
+            &:nth-child(2)
+                box-shadow: -28px 20px 33px rgba(0, 0, 0, 0.33)
+                position: relative
+                z-index: 1000
+            img
+                width: 54px
+                height: 54px
+
+            p
+                font-size: 14px
+                line-height: 130%
+
+    .features
+        li
+            font-size: 14px
+
+    .comparison
+        .info
+            font-size: 12px
 
     .photoshoot
         .slider
@@ -533,5 +704,40 @@
                 width: 90vw
                 max-height: 88vh
                 margin: 0 4px
+
+    .process
+        li
+            width: 100%
+            padding: 50px 30px
+
+    .order
+        padding: 0
+        p
+            margin-bottom: 15px
+        &-title
+            margin-bottom: 120px
+            .btn
+                margin-bottom: 30px
+                padding: 16px 20px 14px
+
+        .phone
+            width: 100%
+            margin-bottom: 30px
+            b
+                font-size: 18px
+
+        &-form
+            padding: 50px 30px
+            width: 100%
+            right: 0
+
+        &-img
+            img
+                width: 100vw
+                max-width: 100vw
+                position: relative
+                z-index: -1
+                left: -16px
+                height: 600px
 
 @import 'footer'

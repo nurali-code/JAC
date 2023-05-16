@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Электромобильные погрузчики JAC: эффективность, экологичность и надежность для вашего бизнеса</title>
-    <meta name="description" content="Инновационные электромобильные погрузчики JAC предлагают высокую производительность, экологическую чистоту и надежность для вашего бизнеса. Узнайте, как наши погрузчики могут повысить эффективность вашей работы, снизить эксплуатационные расходы и улучшить экологическую ответственность вашей компании. Гарантия нашего сервиса и наличие запасных частей в каждом регионе России обеспечивают безопасную и бесперебойную работу вашей техники.">
-    
+    <meta name="description"
+        content="Инновационные электромобильные погрузчики JAC предлагают высокую производительность, экологическую чистоту и надежность для вашего бизнеса. Узнайте, как наши погрузчики могут повысить эффективность вашей работы, снизить эксплуатационные расходы и улучшить экологическую ответственность вашей компании. Гарантия нашего сервиса и наличие запасных частей в каждом регионе России обеспечивают безопасную и бесперебойную работу вашей техники.">
+
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css?ver=2345">
     <link rel="stylesheet" href="./css/jquery.fancybox.min.css">
 </head>
 
@@ -24,23 +25,23 @@
                 <li><a href="#address">Сравнение</a></li>
                 <li><a href="#contacts">Контакты</a></li>
                 <li class="hidden">
-                    <a href="tel:89050802341" class="phone">
+                    <a href="tel:+79609643703" class="phone">
                         <span>Телефон:</span>
-                        <b>8(905)080-23-41</b>
+                        <b>+7(960) 964-37-03</b>
                     </a>
                 </li>
                 <li class="hidden">
-                    <a href="mailto:reizbih@mail.ru" class="phone">
+                    <a href="mailto:knw@jacvostok.ru" class="phone">
                         <span>Наша почта:</span>
-                        <b>reizbih@mail.ru</b>
+                        <b>knw@jacvostok.ru</b>
                     </a>
                 </li>
             </ul>
-            <a href="tel:89050802341" class="phone">
+            <a href="tel:+79609643703" class="phone">
                 <span>Телефон для справок:</span>
-                <b>8(905)080-23-41</b>
+                <b>+7(960) 964-37-03</b>
             </a>
-            <button class="btn btn-outline">подать заявку</button>
+            <button class="btn btn-outline" data-modal="modal-form">Подать заявку</button>
             <button class="btn-menu"><span></span></button>
         </div>
     </header>
@@ -245,7 +246,7 @@
     </section>
 
     <section class="photoshoot" id="photoshoot">
-        <h2 class="container">Фотогалерея</h2>
+        <h2 class="container"><b>Фото</b>галерея</h2>
         <div class="slider">
             <div class="slider-item">
                 <a href="img/slide-1.jpg" data-fancybox="slider">
@@ -293,7 +294,6 @@
                 </a>
             </div>
         </div>
-
     </section>
 
     <section class="process">
@@ -360,9 +360,9 @@
                 </p>
                 <button class="btn">получить коммерческое предложение</button>
                 <div class="order-contacts">
-                    <a href="tel:89050802341" class="phone">
+                    <a href="tel:+79609643703" class="phone">
                         <span>Телефон:</span>
-                        <b>8(905)080-23-41</b>
+                        <b>+7(960) 964-37-03</b>
                     </a>
                     <a href="#" class="phone">
                         <span>Наш Адресс:</span>
@@ -372,9 +372,9 @@
                             24а/1, оф. 205, 2 этаж
                         </b>
                     </a>
-                    <a href="mailto:reizbih@mail.ru" class="phone">
+                    <a href="mailto:knw@jacvostok.ru" class="phone">
                         <span>Наша почта:</span>
-                        <b>reizbih@mail.ru</b>
+                        <b>knw@jacvostok.ru</b>
                     </a>
                 </div>
             </div>
@@ -397,7 +397,9 @@
     </section>
 
     <footer class="footer" id="address">
-        <iframe loading="lazy"></iframe>
+        <iframe loading="lazy"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A113e4e4c641c464e5c40331a55eb4d456630d15fd4372ce5da290b28913ba8cf&amp;source=constructor"></iframe>
+
         <div class="container wrap">
             <div class="col">
                 <a href="#main" class="logo">
@@ -417,27 +419,102 @@
 
             </div>
             <div class="col" id="contacts">
-                <a href="tel:89050802341" class="phone">
+                <a href="tel:+79609643703" class="phone">
                     <span>Телефон для справок:</span>
-                    <b>8(905)080-23-41</b>
+                    <b>+7(960) 964-37-03</b>
                 </a>
-                <a href="mailto:reizbih@mail.ru" class="phone">
+                <a href="mailto:knw@jacvostok.ru" class="phone">
                     <span>Наша почта:</span>
-                    <b>reizbih@mail.ru</b>
+                    <b>knw@jacvostok.ru</b>
                 </a>
             </div>
         </div>
+
         <div class="developt">
             <a href="https://m-idea.ru" target="_blank">Cайт разработан веб-студией <b>IT IDEA</b></a>
         </div>
     </footer>
+
+    <div class="modal" id="modal-form">
+        <div class="modal-content">
+            <button class="modal-close">&#x2715;</button>
+            <h3>Спасибо, за заявку</h3>
+            <form class="order-form" action="#">
+                <fieldset>
+                    <label>Как вас зовут <i>*</i></label>
+                    <input type="text" id="name" name="name" required placeholder="Как вас зовут?">
+                </fieldset>
+                <fieldset>
+                    <label>Номер телефона <i>*</i></label>
+                    <input type="tel" name="phone_number" id="phone_number" required placeholder="Ваш номер телефона">
+                </fieldset>
+                <button type="submit" class="btn">подать заявку</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal" id="modal-cal">
+        <div class="modal-content">
+            <button class="modal-close">&#x2715;</button>
+            <h3>Спасибо, за заявку</h3>
+            <form class="order-form" action="#">
+                <fieldset>
+                    <label>Грузоподёмность</label>
+                    <select name="capacity" id="capacity">
+                        <option value="1500 кг">1500 кг</option>
+                        <option value="2000 кг">2000 кг</option>
+                        <option value="2500 кг">2500 кг</option>
+                        <option value="3000 кг">3000 кг</option>
+                        <option value="3500 кг">3500 кг</option>
+                        <option value="4000 кг">4000 кг</option>
+                        <option value="4500 кг">4500 кг</option>
+                        <option value="5000 кг">5000 кг</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <label>Грузоподёмность</label>
+                    <select name="height" id="height">
+                        <option value="3000 мм">3000 мм</option>
+                        <option value="4800 мм">4800 мм</option>
+                        <option value="6000 мм">6000 мм</option>
+                    </select>
+                </fieldset>
+                <fieldset class="checkbox">
+                    <input type="checkbox" value="Навесное оборудовани" name="frame" id="frame">
+                    <label for="frame">Каркас</label>
+                </fieldset>
+                <fieldset class="checkbox">
+                    <input type="checkbox" value="Навесное оборудовани" name="equipment" id="equipment">
+                    <label for="equipment">Навесное оборудовани</label>
+                </fieldset>
+                <fieldset class="checkbox">
+                    <input type="checkbox" value="Кабина с отопителем" name="сabin" id="сabin">
+                    <label for="сabin">Кабина с отопителем</label>
+                </fieldset>
+                <fieldset class="checkbox">
+                    <input type="checkbox" value="Смещение вил" name="offcet" id="offcet">
+                    <label for="offcet">Смещение вил</label>
+                </fieldset>
+
+
+                <fieldset>
+                    <label>Как вас зовут <i>*</i></label>
+                    <input type="text" id="name" name="name" required placeholder="Как вас зовут?">
+                </fieldset>
+                <fieldset>
+                    <label>Номер телефона <i>*</i></label>
+                    <input type="tel" name="phone_number" id="phone_number" required placeholder="Ваш номер телефона">
+                </fieldset>
+                <button type="submit" class="btn">подать заявку</button>
+            </form>
+        </div>
+    </div>
 
     <a href="#main" class="scroll-up"></a>
 
     <script src="./js/jquery-3.4.1.min.js" defer></script>
     <script src="./js/slick.min.js" defer></script>
     <script src="./js/jquery.inputmask.min.js" defer></script>
-    <script src="./js/scripts.js?ver=3456" defer></script>
+    <script src="./js/scripts.js?ver=2345" defer></script>
     <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 </body>
