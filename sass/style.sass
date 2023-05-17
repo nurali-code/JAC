@@ -402,11 +402,14 @@
     overflow: hidden
     h2
         margin-bottom: 15px
+
     p
         max-width: 430px
         margin-bottom: 25px
+
     .container
         align-items: flex-start
+
     &-title
         width: 38%
         .btn
@@ -434,10 +437,61 @@
         background-color: #fff
         width: 400px
         padding: 60px 50px
-        box-shadow: -70px 40px 215px -61px rgba(0, 0, 0, 0.25)
+        box-shadow: -40px 15px 100px -51px rgba(0, 0, 0, 0.2)
         border-radius: 68px
 
+.map
+    text-align: center
+    overflow: hidden
+    .wrap
+        justify-content: center
+        gap: 8px 8px
 
+    .btn
+        display: inline-block
+        padding: 10px 41px 8px 20px
+        line-height: 120%
+        font-size: 14px
+        background-image: url(../img/arrow-down.svg)
+        background-repeat: no-repeat
+        background-position: center right 20px
+        background-size: 15px auto
+        min-width: unset
+
+    span
+        display: inline-block
+        padding: 4px 15px 3px
+        border: 1px solid rgba(0, 0, 0, .2)
+        border-radius: 30px
+        font-size: 14px
+        text-transform: none
+
+        &::first-letter
+            text-transform: uppercase
+
+        &.hidden,
+        &.mob-hidden
+            display: none
+
+        @media screen and ( min-width: 1200px )
+            &.mob-hidden
+                display: inline-block 
+
+    &-img
+        position: relative
+        z-index: 1
+        &::before
+            content: ''
+            display: block
+            width: 100vw
+            height: 60%
+            background-color: rgba($prime, .4)
+            z-index: -1
+            pointer-events: none
+            position: absolute
+            bottom: 0
+            left: 50%
+            transform: translateX(-50%)
 
 @media screen and ( max-width: 1500px )
     .main
@@ -663,6 +717,19 @@
             left: auto
             bottom: auto
             box-shadow: -20px -22px 215px -61px rgb(0 0 0 / 25%)
+
+    .map
+        .wrap
+            gap: 6px 6px
+
+        span
+            padding: 3px 10px 2px
+            font-size: 12px
+
+        .btn
+            font-size: 12px
+            padding: 8px 35px 6px 15px
+            background-position: center right 15px
 
 @media screen and ( max-width: 700px )
     .main

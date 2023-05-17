@@ -9,6 +9,11 @@ $(document).ready(function () {
         $(this).toggleClass('active');
         $('header, body').toggleClass('active');
     })
+    $("#showAll").click(function () {
+        $(this).remove();
+        $(".hidden, .mob-hidden").removeClass("hidden mob-hidden");
+    });
+
 
     /*---------------------------------------------------end*/
 
@@ -61,6 +66,35 @@ $(document).ready(function () {
         $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top - 40, }, 300,)
     })
     /*---------------------------------------------------end*/
+    $('.guarantee-slider').slick({
+        dots: false,
+        arrows: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 3,
+        swipeToSlide: true,
+        centerMode: false,
+        slidesToScroll: 1,
+        variableWidth: false,
+        responsive: [
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true,
+                    slidesToScroll: 1,
+                    variableWidth: false,
+                }
+            },
+        ]
+    });
+
     $('.slider').slick({
         dots: false,
         arrows: true,
@@ -74,7 +108,7 @@ $(document).ready(function () {
         variableWidth: false,
         responsive: [
             {
-                breakpoint: 1200,
+                breakpoint: 1500,
                 settings: {
                     slidesToShow: 3,
                     centerMode: true,
@@ -88,29 +122,6 @@ $(document).ready(function () {
                     slidesToShow: 1,
                     centerMode: true,
                     centerPadding: '15px',
-                    slidesToScroll: 1,
-                    variableWidth: false,
-                }
-            },
-        ]
-    });
-
-    $('.guarantee-slider').slick({
-        dots: false,
-        arrows: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        swipeToSlide: true,
-        centerMode: false,
-        slidesToScroll: 1,
-        variableWidth: true,
-        responsive: [
-            {
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true,
                     slidesToScroll: 1,
                     variableWidth: false,
                 }
