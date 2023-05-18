@@ -11,7 +11,7 @@ $(document).ready(function () {
     })
     $("#showAll").click(function () {
         $(this).remove();
-        $(".hidden, .mob-hidden").removeClass("hidden mob-hidden");
+        $(".map .hidden, .map .mob-hidden").removeClass("hidden mob-hidden");
     });
 
 
