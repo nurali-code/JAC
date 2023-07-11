@@ -19,8 +19,9 @@ $(document).ready(function () {
 
     function hideModals() {
         $('.modal').fadeOut();
-        $('.modal, body, [data-modal]').removeClass('active');
+        $('.modal, body').removeClass('active');
     };
+
     $(function () {
         function showModal(id) {
             if ($(id).hasClass('active')) {
@@ -36,7 +37,6 @@ $(document).ready(function () {
 
         $('[data-modal]').on('click', function (e) {
             e.preventDefault();
-            $(this).toggleClass('active')
             showModal('#' + $(this).attr("data-modal"));
         });
 
@@ -52,12 +52,19 @@ $(document).ready(function () {
                 ($(e.target).hasClass('nav')) ||
                 ($(e.target).hasClass('btn-menu')) ||
                 ($(e.target).hasClass('btn')) ||
+                ($(e.target).hasClass('btn__link')) ||
                 ($(e.target).hasClass('modal-content'))
             )) {
                 hideModals();
             }
         });
+        setTimeout(() => {
+            showModal('#modal-form3');
+        }, 10000)
     });
+
+
+
 
     /*---------------------------------------------------end*/
 

@@ -7,6 +7,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+
+
 $name = $_POST['name'];
 $phone = $_POST['phone_number'];
 $capacity = $_POST['capacity'];
@@ -16,6 +18,36 @@ $cabin = $_POST['сabin'];
 $frame = $_POST['frame'];
 $offcet = $_POST['offcet'];
 $hours = $_POST['hours'];
+
+// https://api.telegram.org/bot5879635069:AAHmcN8v54NR6aXfdCaS4UM_Xzut9XJNtqc/getUpdates
+$token = "5879635069:AAHmcN8v54NR6aXfdCaS4UM_Xzut9XJNtqc";
+$chat_id = "-1001869762500";
+
+$arr = array(
+    'Имя: ' => $name,
+    'Телефон: ' => $phone
+);
+if (!empty($hours)) {
+    $arr['Грузоподъемность: '] = $capacity;
+    $arr['Высота: '] = $height;
+    $arr['Дополнительно: '] = $frame;
+    $arr[''] = $equipment;
+    $arr[''] = $cabin;
+    $arr[''] = $offcet;
+}
+
+foreach ($arr as $key => $value) {
+    $txt .= "<b>" . $key . "</b> " . $value . "%0A";
+};
+
+$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}", "r");
+
+if ($sendToTelegram) {
+    exit;
+} else {
+    echo 'Error';
+}
+
 
 $mail = new PHPMailer(true);
 $mail->CharSet = 'utf-8';
@@ -31,7 +63,8 @@ try {
     $mail->Port       = 587;
 
     $mail->setFrom('info@jac-elektro.ru', 'ЭЛЕКТРОМОБИЛЬНЫЙ ПОГРУЗЧИК JAC');
-    $mail->addAddress('info@jacvostok.ru', 'Получатель');
+    $mail->addAddress('nur3.dav.97@gmail.com', 'Получатель');
+    // $mail->addAddress('info@jacvostok.ru', 'Получатель');
     $mail->addReplyTo('info@jac-elektro.ru', 'ЭЛЕКТРОМОБИЛЬНЫЙ ПОГРУЗЧИК JAC');
 
     $mail->isHTML(true);
@@ -56,6 +89,7 @@ try {
     }
 
     $mail->Body .= '
+            <td style="border: 1px solid #bdbdbd; padding: 5px; width: 180px">Имя</td>
             <td style="border: 1px solid #bdbdbd; padding: 5px;">' . $name . '</td>
         </tr>
         <tr>
@@ -74,21 +108,18 @@ try {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
-// формируем URL, на который будем отправлять запрос в Битрикс24
-$queryUrl = 'https://gkbig.bitrix24.ru/rest/244/ll5k3yxlfm2tf0jv/crm.lead.add.json';
+$queryUrl = 'https://gkbig.bitrix24.ru/rest/8/1jazdcwxku6t582n/crm.lead.add.json';
 
-// Формируем параметры для создания лида
 $queryData = http_build_query(array(
     "fields" => array(
-        "TITLE" => 'Заявка с сайта jac-elektro.ru',      // Имя лида
-        "NAME" => $name,                 // Имя
-        "PHONE" => array(array("VALUE" => $phone, "VALUE_TYPE" => "MOBILE")),   // Телефон
-        "COMMENTS" => "Грузоподёмность: $capacity\nВысота: $height\nДополнительно: $equipment\n $cabin\n $frame\n $offcet",  // Текстовое поле с описанием
+        "TITLE" => 'Заявка с сайта jac-elektro.ru',
+        "NAME" => $name,
+        "PHONE" => array(array("VALUE" => $phone, "VALUE_TYPE" => "MOBILE")),
+        "COMMENTS" => "Грузоподёмность: $capacity\nВысота: $height\nДополнительно: $equipment\n $cabin\n $frame\n $offcet",
     ),
-    'params' => array("REGISTER_SONET_EVENT" => "Y")    // Произвести регистрацию события добавления лида в живой ленте. Дополнительно будет отправлено уведомление ответственному за лид.
+    'params' => array("REGISTER_SONET_EVENT" => "Y")
 ));
 
-// отправляем запрос в Битрикс24 и обрабатываем ответ
 $curl = curl_init();
 curl_setopt_array($curl, array(
     CURLOPT_SSL_VERIFYPEER => 0,
@@ -103,7 +134,6 @@ $result = curl_exec($curl);
 curl_close($curl);
 $result = json_decode($result, true);
 
-// если произошла какая-то ошибка - выведем её
 if (array_key_exists('error', $result)) {
     die("Ошибка при сохранении лида: " . $result['error_description']);
 } else {

@@ -8,14 +8,43 @@
     <title>Электромобильные погрузчики JAC: эффективность, экологичность и надежность для вашего бизнеса</title>
     <meta name="description"
         content="Инновационные электромобильные погрузчики JAC предлагают высокую производительность, экологическую чистоту и надежность для вашего бизнеса. Узнайте, как наши погрузчики могут повысить эффективность вашей работы, снизить эксплуатационные расходы и улучшить экологическую ответственность вашей компании. Гарантия нашего сервиса и наличие запасных частей в каждом регионе России обеспечивают безопасную и бесперебойную работу вашей техники.">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css?ver=1011212">
+    <link rel="stylesheet" href="./css/style.css?ver=25262728">
     <link rel="stylesheet" href="./css/jquery.fancybox.min.css">
 </head>
 
 <body>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(94102714, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/94102714" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
     <header class="header">
         <div class="container wrap">
             <img src="img/logo.png" alt="Жёлтый Слон" class="logo">
@@ -107,6 +136,9 @@
                 <li>100 % экологичность</li>
             </ul>
         </div>
+        <div class="container center">
+            <button class="btn" data-modal="modal-form2">узнать цену</button>
+        </div>
     </section>
 
     <section class="comparison" id="comparison">
@@ -116,6 +148,7 @@
                 Расчеты приведены в отчете об эксплуатационном ресурсе дизельного погрузчика и электрического погрузчика
                 серии HE в течение одного года (1200 моточасов).
             </p>
+            <button class="btn" data-modal="modal-form2">Просчитать стоимость</button>
         </div>
         <div class="wrap">
             <div class="left">
@@ -306,7 +339,7 @@
                         Клиент оставляет заявку на сайте, после чего наш менеджер связывается с клиентом для уточнения
                         деталей.
                     </p>
-                    <a href="#" class="btn__link">подать заявку</a>
+                    <button data-modal="modal-form" class="btn__link">подать заявку</button>
                 </li>
                 <li class="pop">
                     <p class="heading">Подготовительный этап:</p>
@@ -374,12 +407,11 @@
                 <form class="order-form" action="./sendmail.php" method="post">
                     <fieldset>
                         <label>Как вас зовут <i>*</i></label>
-                        <input type="text" id="name" name="name" required placeholder="Как вас зовут?">
+                        <input type="text" name="name" required placeholder="Как вас зовут?">
                     </fieldset>
                     <fieldset>
                         <label>Номер телефона <i>*</i></label>
-                        <input type="tel" name="phone_number" id="phone_number" required
-                            placeholder="Ваш номер телефона">
+                        <input type="tel" name="phone_number" required placeholder="Ваш номер телефона">
                     </fieldset>
                     <button type="submit" class="btn">подать заявку</button>
                 </form>
@@ -467,11 +499,47 @@
             <form action="./sendmail.php" method="post">
                 <fieldset>
                     <label>Как вас зовут <i>*</i></label>
-                    <input type="text" id="name" name="name" required placeholder="Как вас зовут?">
+                    <input type="text" name="name" required placeholder="Как вас зовут?">
                 </fieldset>
                 <fieldset>
                     <label>Номер телефона <i>*</i></label>
-                    <input type="tel" name="phone_number" id="phone_number" required placeholder="Ваш номер телефона">
+                    <input type="tel" name="phone_number" required placeholder="Ваш номер телефона">
+                </fieldset>
+                <button type="submit" class="btn">подать заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-form2">
+        <div class="modal-content">
+            <button class="modal-close">&#x2715;</button>
+            <h3>Узнать <b>цену</b></h3>
+            <form action="./sendmail.php" method="post">
+                <fieldset>
+                    <label>Как вас зовут <i>*</i></label>
+                    <input type="text" name="name" required placeholder="Как вас зовут?">
+                </fieldset>
+                <fieldset>
+                    <label>Номер телефона <i>*</i></label>
+                    <input type="tel" name="phone_number" required placeholder="Ваш номер телефона">
+                </fieldset>
+                <button type="submit" class="btn">подать заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-form3">
+        <div class="modal-content">
+            <button class="modal-close">&#x2715;</button>
+            <h3>Запишись на <b>тест драйв</b></h3>
+            <form action="./sendmail.php" method="post">
+                <fieldset>
+                    <label>Как вас зовут <i>*</i></label>
+                    <input type="text" name="name" required placeholder="Как вас зовут?">
+                </fieldset>
+                <fieldset>
+                    <label>Номер телефона <i>*</i></label>
+                    <input type="tel" name="phone_number" required placeholder="Ваш номер телефона">
                 </fieldset>
                 <button type="submit" class="btn">подать заявку</button>
             </form>
@@ -528,11 +596,11 @@
 
                 <fieldset>
                     <label>Как вас зовут <i>*</i></label>
-                    <input type="text" id="name" name="name" required placeholder="Как вас зовут?">
+                    <input type="text" name="name" required placeholder="Как вас зовут?">
                 </fieldset>
                 <fieldset>
                     <label>Номер телефона <i>*</i></label>
-                    <input type="tel" name="phone_number" id="phone_number" required placeholder="Ваш номер телефона">
+                    <input type="tel" name="phone_number" required placeholder="Ваш номер телефона">
                 </fieldset>
                 <button type="submit" class="btn">Подать заявку</button>
             </form>
@@ -544,7 +612,7 @@
     <script src="./js/jquery-3.4.1.min.js" defer></script>
     <script src="./js/slick.min.js" defer></script>
     <script src="./js/jquery.inputmask.min.js" defer></script>
-    <script src="./js/scripts.js?ver=1011212" defer></script>
+    <script src="./js/scripts.js?ver=25262728" defer></script>
     <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 </body>
