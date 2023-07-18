@@ -70,11 +70,49 @@
             color: #fff
             background-color: #313131
 
+.iphone
+    background-color: $prime
+    padding: 18px 0
+    margin: 40px 0 60px
+    box-shadow: 0px 4px 60px -10px $prime
+    .wrap
+        padding-left: 198px
+        justify-content: flex-start
+
+    img
+        max-width: 144px
+        position: absolute
+        z-index: 1
+        top: 50%
+        left: 20px
+        transform: translateY(-50%)
+
+    h2
+        margin: 0
+        font-size: 50px
+        font-style: italic
+        line-height: normal
+        line-height: 130%
+
+    p
+        margin: 0 0 0 44px
+        font-size: 47px
+        font-style: normal
+        font-weight: 300
+        text-transform: uppercase
+        line-height: 130%
+        border-left: 1px solid #000
+        padding-left: 44px
+
+    .btn
+        border: 1px solid #000
+        margin: 0 0 0 auto
+
 .features
     h2
         margin-bottom: 60px
 
-    .center 
+    .center
         text-align: center
         padding-top: 30px
     .wrap
@@ -515,6 +553,14 @@
         .container
             max-width: 1100px
 
+    .iphone
+        margin: 100px 0 60px
+        h2
+            font-size: 42px
+
+        p
+            font-size: 36px
+
 @media screen and ( max-width: 1200px )
     .main
         &::before
@@ -555,6 +601,23 @@
 
         &-item
             width: 100%
+
+    .iphone
+        margin: 60px 0
+        .wrap
+            display: block
+            max-width: 550px
+        h2
+            margin: 0 0 5px
+
+        img 
+            max-width: 190px
+            left: -30px
+        p
+            font-size: 30px
+            padding: 0
+            margin: 0 0 15px
+            border: none
 
     .photoshoot
         .slider
@@ -622,7 +685,7 @@
             padding: 15px 0
             background: #e5f8dd
             line-height: 150%
-            span 
+            span
                 text-align: center
         .right,
         .left
@@ -761,6 +824,29 @@
             p
                 font-size: 14px
                 line-height: 130%
+
+    .iphone
+        margin: 60px 0
+        .wrap
+            display: block
+            max-width: 550px
+            padding-left: 160px
+        h2
+            font-size: 20px
+            margin: 0 0 5px
+
+        img 
+            max-width: 130px
+            left: 10px
+        p
+            font-weight: normal
+            text-transform: none
+            font-size: 17px
+            margin: 0 0 15px
+        .btn 
+            font-size: 12px
+            padding: 8px 20px 7px
+            min-width: unset
 
     .features
         li

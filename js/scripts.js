@@ -6,9 +6,9 @@ $(document).ready(function () {
     /*---------------------------------------------------end*/
 
     $('.btn-menu').on('click', function () {
-        $(this).toggleClass('active');
-        $('header, body').toggleClass('active');
+        $('header, .btn-menu').toggleClass('active');
     })
+
     $("#showAll").click(function () {
         $(this).remove();
         $(".map .hidden, .map .mob-hidden").removeClass("hidden mob-hidden");
@@ -48,11 +48,7 @@ $(document).ready(function () {
             if (!(
                 ($(e.target).parents('.modal-content').length) ||
                 ($(e.target).parents('.nav').length) ||
-                ($(e.target).parents('.btn-menu').length) ||
-                ($(e.target).hasClass('nav')) ||
-                ($(e.target).hasClass('btn-menu')) ||
                 ($(e.target).hasClass('btn')) ||
-                ($(e.target).hasClass('btn__link')) ||
                 ($(e.target).hasClass('modal-content'))
             )) {
                 hideModals();
@@ -71,6 +67,7 @@ $(document).ready(function () {
     $('a[href*="#"]').on('click', function (e) {
         e.preventDefault();
         $('html, body').animate({ scrollTop: $($(this).attr('href')).offset().top - 40, }, 300,)
+        $('header, .btn-menu').removeClass('active');
     })
     /*---------------------------------------------------end*/
     $('.guarantee-slider').slick({

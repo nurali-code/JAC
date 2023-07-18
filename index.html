@@ -14,15 +14,17 @@
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#75DC49">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;900display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css?ver=25262728">
+    <link rel="stylesheet" href="./css/style.css?ver=27282930">
     <link rel="stylesheet" href="./css/jquery.fancybox.min.css">
 </head>
 
-<body>
+<body id="main">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
@@ -75,7 +77,7 @@
         </div>
     </header>
 
-    <main id="main" class="main">
+    <main class="main">
         <div class="container">
             <h1>Электромобильный <b>погрузчик</b></h1>
             <p class="main__text"><b>Технологии электромобиля</b> - теперь <br> в вилочном погрузчике</p>
@@ -112,6 +114,15 @@
             </div>
         </div>
     </main>
+
+    <section class="iphone">
+        <div class="container wrap">
+            <img src="img/iphone.png" alt="iphone">
+            <h2><b>iPhone 13</b> <br> в подарок </h2>
+            <p>При покупке <br> погрузчика</p>
+            <button class="btn btn_outline" data-modal="modal-form">ПОДАТЬ ЗАЯВКУ</button>
+        </div>
+    </section>
 
     <section id="features" class="features">
         <h2 class="container">
@@ -404,7 +415,8 @@
                 </div>
             </div>
             <div class="order-img">
-                <form class="order-form" action="./sendmail.php" method="post">
+                <form onsubmit="ym(94102714, 'reachGoal', 'zayavka'); return true;" class="order-form"
+                    action="./sendmail.php" method="post">
                     <fieldset>
                         <label>Как вас зовут <i>*</i></label>
                         <input type="text" name="name" required placeholder="Как вас зовут?">
@@ -496,7 +508,7 @@
         <div class="modal-content">
             <button class="modal-close">&#x2715;</button>
             <h3>Подать <b>заявку</b></h3>
-            <form action="./sendmail.php" method="post">
+            <form onsubmit="ym(94102714, 'reachGoal', 'zayavka'); return true;" action="./sendmail.php" method="post">
                 <fieldset>
                     <label>Как вас зовут <i>*</i></label>
                     <input type="text" name="name" required placeholder="Как вас зовут?">
@@ -514,7 +526,7 @@
         <div class="modal-content">
             <button class="modal-close">&#x2715;</button>
             <h3>Узнать <b>цену</b></h3>
-            <form action="./sendmail.php" method="post">
+            <form onsubmit="ym(94102714, 'reachGoal', 'zayavka'); return true;" action="./sendmail.php" method="post">
                 <fieldset>
                     <label>Как вас зовут <i>*</i></label>
                     <input type="text" name="name" required placeholder="Как вас зовут?">
@@ -532,7 +544,7 @@
         <div class="modal-content">
             <button class="modal-close">&#x2715;</button>
             <h3>Запишись на <b>тест драйв</b></h3>
-            <form action="./sendmail.php" method="post">
+            <form onsubmit="ym(94102714, 'reachGoal', 'zayavka'); return true;" action="./sendmail.php" method="post">
                 <fieldset>
                     <label>Как вас зовут <i>*</i></label>
                     <input type="text" name="name" required placeholder="Как вас зовут?">
@@ -550,7 +562,7 @@
         <div class="modal-content">
             <button class="modal-close">&#x2715;</button>
             <h3><b>КОММЕРЧЕСКОЕ</b> ПРЕДЛОЖЕНИЕ</h3>
-            <form action="./sendmail.php" method="post">
+            <form onsubmit="ym(94102714, 'reachGoal', 'zayavka'); return true;" action="./sendmail.php" method="post">
                 <input type="hidden" name="hours" value="serv">
                 <div class="wrap">
                     <fieldset>
@@ -612,7 +624,7 @@
     <script src="./js/jquery-3.4.1.min.js" defer></script>
     <script src="./js/slick.min.js" defer></script>
     <script src="./js/jquery.inputmask.min.js" defer></script>
-    <script src="./js/scripts.js?ver=25262728" defer></script>
+    <script src="./js/scripts.js?ver=27282930" defer></script>
     <script defer src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 </body>
