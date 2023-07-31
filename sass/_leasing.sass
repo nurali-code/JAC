@@ -1,0 +1,111 @@
+.leasing
+    padding-left: 15px
+    padding-right: 15px
+    .container
+        padding: 30px
+        box-shadow: 0 0 20px rgb(165 165 165 / 35%)
+        border-radius: 30px
+
+    .title
+        max-width: 370px
+        h2
+            margin-bottom: 10px
+            font-weight: 600
+            font-size: 32px
+            text-transform: none
+            line-height: 1.1
+
+    .logos
+        height: 70px
+        width: calc( 100% - 400px )
+        background-image: url(../img/logos-leas-line.png)
+        animation: run 20s linear infinite
+
+    h3
+        font-weight: 600
+        max-width: 270px
+        text-transform: none
+        font-size: 24px
+        margin: 0
+
+    .form
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        min-height: 340px
+        margin-top: 25px
+        background-image: url('../img/leasing-bg.jpg')
+        background-size: cover
+        border-radius: 20px
+        &-title
+            margin: 0 0 auto 0
+            width: 100%
+            max-width: 490px
+            height: 290px
+            background-size: contain
+            padding: 20px
+            background-image: url('../img/leasing-decor.png')
+            background-repeat: no-repeat
+            border-radius: 20px
+            color: #fff
+            p
+                max-width: 320px
+                font-weight: 500
+                font-size: 16px
+
+        fieldset
+            min-width: 25%
+
+        &-inps
+            padding: 20px
+            display: flex
+            align-items: center
+            gap: 20px
+            .btn
+                max-width: 250px
+
+    @media screen and ( max-width: 900px )
+        .wrap
+            display: block
+
+        .title
+            h2
+                font-size: 26px
+
+        .container
+            box-shadow: 0 0 8px rgb(165 165 165 / 24%)
+        .logos
+            width: calc( 100% + 60px )
+            position: relative
+            max-width: unset
+            left: -30px
+            margin-bottom: 25px
+
+        .form
+            &-title
+                background-size: cover
+                height: 265px
+                p
+                    font-size: 15px
+            &-inps
+                // max-width: 300px
+                padding: 0 20px 40px
+                display: block
+                .btn
+                    max-width: unset
+
+        h3
+            font-weight: 600
+            font-size: 20px
+            margin-bottom: 5px
+
+@keyframes run
+    0%
+        background-position: left 0% center
+    100%
+        background-position: left 100% center
+
+mark
+    background: transparent
+    color: $prime
+    font-weight: 800

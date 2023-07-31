@@ -10,6 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 
 
 $name = $_POST['name'];
+$email = $_POST['email'];
 $phone = $_POST['phone_number'];
 $capacity = $_POST['capacity'];
 $height = $_POST['height'];
@@ -27,6 +28,9 @@ $arr = array(
     'Имя: ' => $name,
     'Телефон: ' => $phone
 );
+if (!empty($email)) {
+    $arr['Почта: '] = $email;
+}
 if (!empty($hours)) {
     $arr['Грузоподъемность: '] = $capacity;
     $arr['Высота: '] = $height;
@@ -39,15 +43,7 @@ if (!empty($hours)) {
 foreach ($arr as $key => $value) {
     $txt .= "<b>" . $key . "</b> " . $value . "%0A";
 };
-
 $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}", "r");
-
-if ($sendToTelegram) {
-    exit;
-} else {
-    echo 'Error';
-}
-
 
 $mail = new PHPMailer(true);
 $mail->CharSet = 'utf-8';
@@ -96,6 +92,10 @@ try {
             <td style="border: 1px solid #bdbdbd; padding: 5px; width: 180px">Телефон</td>
             <td style="border: 1px solid #bdbdbd; padding: 5px;">' . $phone . '</td>
         </tr>
+        <tr>
+            <td style="border: 1px solid #bdbdbd; padding: 5px; width: 180px">Почта</td>
+            <td style="border: 1px solid #bdbdbd; padding: 5px;">' . $email . '</td>
+        </tr>
         ' . $hours_row . '
     </table>';
 
@@ -115,6 +115,7 @@ $queryData = http_build_query(array(
         "TITLE" => 'Заявка с сайта jac-elektro.ru',
         "NAME" => $name,
         "PHONE" => array(array("VALUE" => $phone, "VALUE_TYPE" => "MOBILE")),
+        "EMAIL" => array(array("VALUE" => $email, "VALUE_TYPE" => "WORK")),
         "COMMENTS" => "Грузоподёмность: $capacity\nВысота: $height\nДополнительно: $equipment\n $cabin\n $frame\n $offcet",
     ),
     'params' => array("REGISTER_SONET_EVENT" => "Y")
