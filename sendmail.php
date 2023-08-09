@@ -108,7 +108,7 @@ try {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
-$queryUrl = 'https://gkbig.bitrix24.ru/rest/8/1jazdcwxku6t582n/crm.lead.add.json';
+$queryUrl = 'https://gkbig.bitrix24.ru/rest/104/70mqyx2ia4iczzx1/crm.lead.add.json';
 
 $queryData = http_build_query(array(
     "fields" => array(
